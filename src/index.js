@@ -7,8 +7,16 @@ import { Container } from 'react-bootstrap';
 
 ReactDOM.render(
   <React.StrictMode >
-    <Container className="bg-primary" fluid>
-      <App />
+    <Container style={{
+      height: '100vh'
+    }}
+      className="bg-primary" fluid>
+      <Container style={{
+        paddingTop: 10
+      }} fluid>
+        <App />
+      </Container>
+
     </Container>
 
   </React.StrictMode>,

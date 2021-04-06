@@ -5,7 +5,7 @@ export default function Buttons(props) {
     const buttonList = props.buttons.map(button => (
         <>
             {' '}
-            <Button as="input" type="button" active size="sm" value={button.name} key={button.key}></Button>
+            <Button as="input" type="button" size="sm" value={button.name} key={button.key}></Button>
         </>
     ));
     

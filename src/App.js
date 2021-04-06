@@ -19,8 +19,8 @@ const MAZE_BUTTON_DATA = [
 const PATHFINDING_SLIDER_DATA = [
   { name: "Width", id: "width", current: "80", max: "100", min: "8" },
   { name: "Height", id: "height", current: "45", max: "100", min: "8" },
-  { name: "Block Size", id: "blockSize", current: "4", max: "10", min: "3" },
   { name: "Speed", id: "speed", current: "75", max: "100", min: "0" },
+  { name: "Block Size", id: "blockSize", current: "4", max: "10", min: "3" },
 ];
 
 const PATHFINDING_BUTTON_DATA = [
@@ -61,7 +61,7 @@ const MAIN_DATA = [
 
 function App(props) {
   return (
-    <Container className="bg-light">
+    <Container className="bg-light rounded-top">
       <ChoiceTabs choices={MAIN_DATA} />
     </Container>
   );

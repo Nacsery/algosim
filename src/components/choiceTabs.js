@@ -1,6 +1,5 @@
 import { Col, Container, Tabs, Tab, Row } from 'react-bootstrap';
 
-
 export default function ChoiceTabs(props) {
     const settingsList = props.choices.map(tab => (
         <Tab
@@ -8,13 +7,20 @@ export default function ChoiceTabs(props) {
             title={tab.name}
             key={tab.id}
         >
-            <Container>
-                <Col sm xl xs lg md>
-                    <Row sm xl xs lg md>
+            <Container style={{
+                marginTop: '0.5em'
+            }}>
+                <Col>
+                    <Row >
                         {tab.buttonSettings}
                     </Row>
                     <Row>
-                        {tab.sliderSettings}
+                        <Container style={{
+                            marginTop: '0.4em'
+                        }}>
+                            {tab.sliderSettings}
+                        </Container>
+
                     </Row>
                 </Col>
             </Container>
