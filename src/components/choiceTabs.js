@@ -8,28 +8,22 @@ export default function ChoiceTabs(props) {
             title={tab.name}
             key={tab.id}
         >
-            <Container fluid>
-                <Row sm xl xs lg md>
-                    <Col>
-                        {tab.sliderSettings}
-                    </Col>
-                    <Col sm xs={0}></Col>
-
-                </Row>
-                <Row ></Row>
-                <Row sm xl xs lg md>
-                    <Col sm xl xs lg md>
+            <Container>
+                <Col sm xl xs lg md>
+                    <Row sm xl xs lg md>
                         {tab.buttonSettings}
-                    </Col>
-                    <Col sm xs={0}></Col>
-                </Row>
+                    </Row>
+                    <Row>
+                        {tab.sliderSettings}
+                    </Row>
+                </Col>
             </Container>
 
         </Tab >
     ));
 
     return (
-        <Container fluid>
+        <Container>
             <Col>
                 <Tabs fill transition={false} key="rangeTab">
                     {settingsList}

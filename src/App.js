@@ -11,9 +11,9 @@ const MAZE_SLIDER_DATA = [
 ];
 
 const MAZE_BUTTON_DATA = [
-  { name: "Start", type: "start", key:"m1" },
-  { name: "Stop", type: "start" , key:"m2" },
-  { name: "Reset", type: "reset" , key:"m3" }
+  { name: "Start", type: "start", key: "m1" },
+  { name: "Stop", type: "start", key: "m2" },
+  { name: "Reset", type: "reset", key: "m3" }
 ]
 
 const PATHFINDING_SLIDER_DATA = [
@@ -24,10 +24,10 @@ const PATHFINDING_SLIDER_DATA = [
 ];
 
 const PATHFINDING_BUTTON_DATA = [
-  { name: "Start", type: "start" , key:"p1" },
-  { name: "Stop", type: "start" , key:"p2" },
-  { name: "Grid", type: "grid" , key:"p3" },
-  { name: "Reset", type: "reset" , key:"p4" }
+  { name: "Start", type: "start", key: "p1" },
+  { name: "Stop", type: "start", key: "p2" },
+  { name: "Grid", type: "grid", key: "p3" },
+  { name: "Reset", type: "reset", key: "p4" }
 ]
 
 let currentMazeSettings = {
@@ -61,7 +61,7 @@ const MAIN_DATA = [
 
 function App(props) {
   return (
-    <Container fluid>
+    <Container className="bg-light">
       <ChoiceTabs choices={MAIN_DATA} />
     </Container>
   );

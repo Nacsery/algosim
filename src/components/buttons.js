@@ -5,12 +5,12 @@ export default function Buttons(props) {
     const buttonList = props.buttons.map(button => (
         <>
             {' '}
-            <Button active size="sm" as="input" type={button.type} value={button.name} key={button.key}></Button>
+            <Button as="input" type="button" active size="sm" value={button.name} key={button.key}></Button>
         </>
     ));
     
     return (
-        <Container>
+        <Container variant="success">
             {buttonList}
         </Container>
     );
