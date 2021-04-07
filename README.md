@@ -6,6 +6,8 @@ Javascript Algorithm Simulator for Pathfinding, Maze-creation and 2D Contour gra
 
 Live at [Github Pages](https://nacsery.github.io/algosim/)
 
+Legacy project at [Github](https://github.com/Nacsery/maze-creation)
+
 ## To Do List
 
 * [x] Basic simulator UI
