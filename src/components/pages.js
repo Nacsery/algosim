@@ -1,11 +1,11 @@
 import { Col, Container, Tabs, Tab, Row } from 'react-bootstrap';
-
+import Canvas from './canvas'
 
 //Creates the main choice tabs Maze creation, pathfinding etc.
 //Each main tab contains buttons and slider settings
 //Render the content tab
-export default function ChoiceTabs(props) {
-    const settingsList = props.choices.map(tab => (
+export default function PageTabs(props) {
+    const settingsList = props.data.map(tab => (
         <Tab
             eventKey={tab.id}
             title={tab.name}
@@ -24,9 +24,10 @@ export default function ChoiceTabs(props) {
                         }}>
                             {tab.sliderSettings}
                         </Container>
-
                     </Row>
+
                 </Col>
+                {tab.canvas}
             </Container>
 
         </Tab >
@@ -35,7 +36,9 @@ export default function ChoiceTabs(props) {
     return (
         <Container>
             <Col>
-                <Tabs fill transition={false} key="rangeTab">
+                <Tabs fill transition={false} key="rangeTab" onSelect={(key,e)=>{
+                    props.data[key].simulator.start();
+                }}>
                     {settingsList}
                 </Tabs>
             </Col>
