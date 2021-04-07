@@ -1,5 +1,9 @@
 import { Col, Container, Tabs, Tab, Row } from 'react-bootstrap';
 
+
+//Creates the main choice tabs Maze creation, pathfinding etc.
+//Each main tab contains buttons and slider settings
+//Render the content tab
 export default function ChoiceTabs(props) {
     const settingsList = props.choices.map(tab => (
         <Tab

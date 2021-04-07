@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { FormControl, Row, Col, InputGroup, Tab, Container } from 'react-bootstrap';
 
+
+//Slider form function
+//Changes the corresponding value from main settings
+//Shows current value at the right of slider
 function Slider(props) {
-
     const [current, setCurrent] = useState(0);
-
     return (
         <Container fluid>
             <Container style={{
@@ -42,6 +44,9 @@ function Slider(props) {
     );
 }
 
+//Creates a list of sliders from given data with mapping
+//Get main settings as an input to add them to the change event of the slider
+//Returns the list of sliders as tabs
 export default function sliderList(ranges, settings) {
     const rangeList = ranges.map(range => (
         <Tab
