@@ -2,7 +2,7 @@
 
 ## Description
 
-Javascript Algorithm Simulator for Pathfinding, Maze-creation and 2D Contour graphs. User will be able to start, stop, see, and speed up the simulation of algorithms.
+Javascript Algorithm Simulator for Pathfinding, Maze-creation and 2D Contour graphs. User will be able to start, stop, see, and speed up the simulation of algorithms. Frameworks used: React, React-Bootstrap, Bootstrap.
 
 Live at [Github Pages](https://nacsery.github.io/algosim/)
 
@@ -11,7 +11,7 @@ Live at [Github Pages](https://nacsery.github.io/algosim/)
 * [x] Basic simulator UI
 * [x] Maze Creator UI
 * [x] Pathfinding UI
-* [ ] Canvas
+* [ ] Canvas / WebGL
 * [ ] Obstacles
 * [ ] Randomized depth first search algorithm
 * [ ] Randomized Kruskal's algorithm
