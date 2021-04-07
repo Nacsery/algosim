@@ -1,5 +1,3 @@
-import { Container } from 'react-bootstrap';
-
 let canvas;
 
 export default function Canvas(props) {

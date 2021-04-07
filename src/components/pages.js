@@ -1,5 +1,4 @@
 import { Col, Container, Tabs, Tab, Row } from 'react-bootstrap';
-import Canvas from './canvas'
 
 //Creates the main choice tabs Maze creation, pathfinding etc.
 //Each main tab contains buttons and slider settings

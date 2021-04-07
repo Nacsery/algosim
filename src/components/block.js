@@ -61,7 +61,7 @@ Block.prototype.removeWall = function (direction) {
         case 'right':
             this.ctx.rect(this.x + 4, this.y + 1, temp, temp);
             break;
-
+        default:
     }
     this.ctx.fill();
 }

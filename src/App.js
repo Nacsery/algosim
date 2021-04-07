@@ -4,7 +4,6 @@ import sliderList from './components/sliders'
 import PageTabs from './components/pages'
 import Buttons from './components/buttons'
 import Simulator from './components/simulator'
-import React, { useState, useEffect } from 'react';
 import Canvas from './components/canvas';
 import MazeCreator from './components/mazeCreator'
 import GridHandler from './components/gridHandler'
@@ -22,9 +21,9 @@ const MAZE_SLIDER_DATA = [
 
 //Contains button data for maze
 const MAZE_BUTTON_DATA = [
-  { name: "Start", type: "start", key: "m1", event: () => { gridHandler.mazeStart() } },
-  { name: "Stop", type: "stop", key: "m2", event: () => { gridHandler.mazeStop() } },
-  { name: "Reset", type: "reset", key: "m3", event: () => { gridHandler.reset() } }
+  { name: "Start", type: "start", key: "m1-", event: () => { gridHandler.mazeStart() } },
+  { name: "Stop", type: "stop", key: "m2-", event: () => { gridHandler.mazeStop() } },
+  { name: "Reset", type: "reset", key: "m3-", event: () => { gridHandler.reset() } }
 ]
 
 //Contains slider data for pathfinding
@@ -36,10 +35,10 @@ const PATHFINDING_SLIDER_DATA = [
 
 //Contains button data for pathfinding
 const PATHFINDING_BUTTON_DATA = [
-  { name: "Start", type: "start", key: "p1" },
-  { name: "Stop", type: "stop", key: "p2" },
-  { name: "Grid", type: "grid", key: "p3" },
-  { name: "Reset", type: "reset", key: "p4" }
+  { name: "Start", type: "start", key: "p1-" },
+  { name: "Stop", type: "stop", key: "p2-" },
+  { name: "Grid", type: "grid", key: "p3-" },
+  { name: "Reset", type: "reset", key: "p4-" }
 ]
 
 //Current maze settings 
