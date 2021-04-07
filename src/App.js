@@ -87,7 +87,6 @@ function App(props) {
 
       <Container style={{
         marginTop: '0.5em',
-
         paddingBottom: 10
       }} >
         <Canvas id={0} Simulator={simulator}  />

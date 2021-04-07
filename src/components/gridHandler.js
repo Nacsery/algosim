@@ -7,7 +7,6 @@ export default function GridHandler(mazeCreator, gridMaker) {
 }
 
 GridHandler.prototype.mazeStart = async function () {
-    console.log(this.firstStart);
     if (this.firstStart) {
         this.firstStart = false;
         this.grid = await this.gridMaker.newGrid();
