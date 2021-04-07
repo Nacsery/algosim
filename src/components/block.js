@@ -46,7 +46,7 @@ Block.prototype.update = function (x, y) {
 //Removes the Wall from given direction
 Block.prototype.removeWall = function (direction) {
     this.ctx.beginPath();
-    this.ctx.fillStyle = 'grey';
+    this.ctx.fillStyle = '#6c757d';
     let temp = this.size - 2;
     switch (direction) {
         case 'up':

@@ -37,7 +37,7 @@ export default function PageTabs(props) {
         <Container>
             <Col>
                 <Tabs fill transition={false} key="rangeTab" onSelect={(key,e)=>{
-                    props.data[key].simulator.start();
+                    props.gridHandler.reset();
                 }}>
                     {settingsList}
                 </Tabs>

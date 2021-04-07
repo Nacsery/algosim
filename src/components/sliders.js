@@ -25,6 +25,7 @@ function Slider(props) {
                             onChange={(changeEvent => {
                                 setCurrent(changeEvent.target.value);
                                 props.settings[props.id] = Number(changeEvent.target.value);
+                                props.event(changeEvent.target.value);
                             })} custom />
                     </Col>
                     <Col xs sm xl lg md={2}>
@@ -60,6 +61,7 @@ export default function sliderList(ranges, settings) {
                 max={range.max}
                 min={range.min}
                 key={range.id}
+                event={range.event}
                 settings={settings} />
         </Tab>
     ));

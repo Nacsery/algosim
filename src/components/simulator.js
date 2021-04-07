@@ -19,13 +19,15 @@ Simulator.prototype.initSimulator = function (canvas) {
     this.start();
 };
 
-Simulator.prototype.newGrid = function () {
+Simulator.prototype.newGrid = async function () {
     let grid = [];
     for (let i = 0; i < this.height; i += this.blockSize) {
         let row = []
+        
         for (let j = 0; j < this.width; j += this.blockSize) {
             let block = new Block(j, i, 'black', this.blockSize);
             row.push(block);
+            
             block.drawOuter();
             block.drawInner('white', 1, 2);
         }
@@ -33,3 +35,8 @@ Simulator.prototype.newGrid = function () {
     }
     return grid;
 };
+
+Simulator.prototype.setBlockSize = function (size) {
+
+    this.blockSize = size*10;
+}

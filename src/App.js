@@ -6,23 +6,30 @@ import Buttons from './components/buttons'
 import Simulator from './components/simulator'
 import React, { useState, useEffect } from 'react';
 import Canvas from './components/canvas';
+import MazeCreator from './components/mazeCreator'
+import GridHandler from './components/gridHandler'
+
+let simulator = new Simulator();
+let mazeCreator = new MazeCreator();
+let gridHandler = new GridHandler(mazeCreator, simulator);
 
 //Contains slider data for maze
 const MAZE_SLIDER_DATA = [
-  { name: "Grid Size", id: "grid-size", current: "5", max: "10", min: "1" },
-  { name: "Speed", id: "speed", current: "75", max: "100", min: "0" },
+  { name: "Grid Size", id: "grid-size", current: "2", max: "4", min: "1", event: (size) => { simulator.setBlockSize(size); gridHandler.reset(); } },
+  { name: "Speed", id: "speed", current: "75", max: "100", min: "0", event: (speed) => { mazeCreator.setSpeed((speed-100)*-1) } },
 ];
+
 
 //Contains button data for maze
 const MAZE_BUTTON_DATA = [
-  { name: "Start", type: "start", key: "m1" },
-  { name: "Stop", type: "start", key: "m2" },
-  { name: "Reset", type: "reset", key: "m3" }
+  { name: "Start", type: "start", key: "m1", event: () => { gridHandler.mazeStart() } },
+  { name: "Stop", type: "stop", key: "m2", event: () => { gridHandler.mazeStop() } },
+  { name: "Reset", type: "reset", key: "m3", event: () => { gridHandler.reset() } }
 ]
 
 //Contains slider data for pathfinding
 const PATHFINDING_SLIDER_DATA = [
-  { name: "Grid Size", id: "grid-size", current: "5", max: "10", min: "1" },
+  { name: "Grid Size", id: "grid-size", current: "5", max: "5", min: "1" },
   { name: "Speed", id: "speed", current: "75", max: "100", min: "0" },
   { name: "Block Size", id: "blockSize", current: "4", max: "10", min: "3" },
 ];
@@ -30,7 +37,7 @@ const PATHFINDING_SLIDER_DATA = [
 //Contains button data for pathfinding
 const PATHFINDING_BUTTON_DATA = [
   { name: "Start", type: "start", key: "p1" },
-  { name: "Stop", type: "start", key: "p2" },
+  { name: "Stop", type: "stop", key: "p2" },
   { name: "Grid", type: "grid", key: "p3" },
   { name: "Reset", type: "reset", key: "p4" }
 ]
@@ -51,7 +58,7 @@ let currentPathfindingSettings = {
   speed: Number(PATHFINDING_SLIDER_DATA[2].current)
 }
 
-let simulator = new Simulator();
+
 
 //Contains main page settings
 const MAIN_DATA = [
@@ -76,12 +83,14 @@ const MAIN_DATA = [
 function App(props) {
   return (
     <Container className="bg-light rounded-top rounded-bottom">
-      <PageTabs data={MAIN_DATA} />
-      
+      <PageTabs data={MAIN_DATA} gridHandler={gridHandler} />
+
       <Container style={{
-        marginTop: '0.5em'
-      }}>
-        <Canvas id={0} Simulator={simulator} />
+        marginTop: '0.5em',
+
+        paddingBottom: 10
+      }} >
+        <Canvas id={0} Simulator={simulator}  />
       </Container>
     </Container>
   );
