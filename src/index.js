@@ -9,7 +9,8 @@ ReactDOM.render(
   <React.StrictMode >
     <Container fluid>
       <Container style={{
-        paddingTop: 10
+        paddingTop: 10,
+        paddingBottom: 20
       }} fluid>
         <App />
       </Container>
